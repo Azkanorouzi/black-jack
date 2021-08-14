@@ -1,0 +1,1 @@
+this one is a simple js application which is able to count the number of passengers .
