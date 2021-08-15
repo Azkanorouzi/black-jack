@@ -1,17 +1,20 @@
-let a = 0;
-let b = document.getElementById("count-el");
-let s = document.getElementById("previous-el");
-function increment(){
- a+=1;
- b.textContent=a;
+let firstCard=10;
+let secondCard=10;
+let sum = firstCard + secondCard;
+let isAlive = true;
+let hasBlackjack =false;
+let message = "";
+function startgame(){
+if (sum<=20){
+ message= "do you want to draw a new card ? 🙂"
 }
-function save() {
-let countstr = a + " - ";
-s.textContent += countstr;
-a = 0;
-b.textContent = 0;
+else if (sum===21){
+ message = "wohoo ! you've got the blackjack! 🥳";
+ hasBlackjack=true;
 }
-
-
-
-
+else {
+ message = "you're out of the game ! 😭";
+ isAlive=false;
+}
+console.log(message);
+}

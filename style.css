@@ -4,42 +4,45 @@
  box-sizing: border-box;
 }
 body{
- background: url("img29.jpg");
- background-size: cover;
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- font-weight: bold;
- text-align: center;
- height: 100vh;
  width: 100vw;
+ height: 100vh;
  display: flex;
  justify-content: center;
- align-items: center;
+ text-align: center;
+ background:linear-gradient(to right , rgb(1, 75, 1) , rgb(0, 173, 0) , rgb(1, 56, 9));
  flex-direction: column;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 h1{
- margin-top: 10px;
- margin-bottom: 10px;
-}
-h2{
  font-size: 50px;
- margin-top: 0;
- margin-bottom: 20px;
+ font-weight: bolder;
+ color: gold;
+ margin-bottom: 5rem;
 }
-button{
- border: none;
- padding-top: 10px;
- padding-bottom: 10px;
- color: white;
- font-weight: bold;
+#message-el ,p{
+color: white;
+font-weight: bold;
+font-size: 40px;
+line-height: 6rem;
+font-style: italic;
+}
+#start-el{
  width: 200px;
- margin-bottom: 5px;
- border-radius: 5px;
- background: darkred;
+ margin-right: auto;
+ margin-left: auto;
+ background-color: gold;
+ border: none;
+ padding: 1rem;
+ color: black;
+ font-size: 19px;
+ border-radius: 2rem;
  cursor: pointer;
+ transition: 1s background , .2s transform;
 }
-button:active{
- transform: scale(.9);
+#start-el:hover{
+ transform: translatey(8px);
+ background: white;
 }
-.save-button{
- background: green;
+#start-el:active{
+ transform: scale(.96)
 }
