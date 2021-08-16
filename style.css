@@ -26,7 +26,7 @@ font-size: 40px;
 line-height: 6rem;
 font-style: italic;
 }
-#start-el{
+button{
  width: 200px;
  margin-right: auto;
  margin-left: auto;
@@ -39,10 +39,14 @@ font-style: italic;
  cursor: pointer;
  transition: 1s background , .2s transform;
 }
-#start-el:hover{
+button:hover{
  transform: translatey(8px);
  background: white;
 }
-#start-el:active{
+button:active{
  transform: scale(.96)
+}
+#new-el{
+ position: relative;
+ top: 1.5rem;
 }
