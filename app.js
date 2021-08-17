@@ -1,4 +1,4 @@
-
+ 
 let cards = [] //array - order list of items
 let sum = 0;
 let isAlive = false;
@@ -7,8 +7,16 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.querySelector(".sum-el");
 let cardEl = document.querySelector("#card-el");
-
-console.log(cards)
+let players = {
+  Name:"user-1",
+  Chips:100,
+  sayHello: function(){
+    console.log("heisann")
+  }
+};
+players.sayHello();
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = players.Name + ": $" + players.Chips ;
 function randomCard(){
 var rCard = Math.floor(Math.random()*13) + 1
  if (rCard > 10) {
@@ -23,12 +31,15 @@ else {
 
 }
 function startGame() {
+  if ( sum == 0 )
+  {
   isAlive = true;
   let firstCard = randomCard();
   let secondCard = randomCard();
   cards = [firstCard , secondCard];
   sum = firstCard + secondCard;
   renderGame();
+  }
 }
 
 function renderGame() {
@@ -71,4 +82,10 @@ function newCard() {
         }
   messageEl.textContent = message;
 }
-}
+} 
+ 
+
+
+
+
+

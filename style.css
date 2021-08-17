@@ -50,3 +50,8 @@ button:active{
  position: relative;
  top: 1.5rem;
 }
+#player-el{
+ margin-top: 1rem;
+}
+
+
