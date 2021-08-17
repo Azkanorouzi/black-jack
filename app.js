@@ -1,15 +1,38 @@
-let firstCard = 5;
-let secondCard = 11;
-let cards = [firstCard,secondCard] //array - order list of items
-let sum = firstCard + secondCard;
-let isAlive = true;
+
+let cards = [] //array - order list of items
+let sum = 0;
+let isAlive = false;
 let hasBlackjack = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.querySelector(".sum-el");
 let cardEl = document.querySelector("#card-el");
 
+console.log(cards)
+function randomCard(){
+var rCard = Math.floor(Math.random()*13) + 1
+ if (rCard > 10) {
+    return 10
+  }
+  else if (rCard === 1){
+  return 11 
+}
+else {
+  return rCard ;
+}
+
+}
+function startGame() {
+  isAlive = true;
+  let firstCard = randomCard();
+  let secondCard = randomCard();
+  cards = [firstCard , secondCard];
+  sum = firstCard + secondCard;
+  renderGame();
+}
+
 function renderGame() {
+
   if (sum <= 20) {
     message = "do you want to draw a new card ?"
   }
@@ -23,17 +46,29 @@ function renderGame() {
   }
   messageEl.textContent = message;
   sumEl.innerText = "Sum : " + " " + sum;
-  cardEl.textContent = "Cards:" + " " + cards[0] + " " + cards[1] ;
+  for (var a = 0; a < 2 ; a++){
+    cardEl.textContent += cards[a] + " ";
+  }
+
 }
-function startGame(){
-  renderGame();
-}
+
 function newCard() {
-  var thirdCard = 5;
-  cards.push(thirdCard)
-  console.log(cards)
-  sum += thirdCard;
-  renderGame();
+  if (isAlive === true && hasBlackjack === false){
+        var thirdCard = randomCard();
+        cardEl.textContent += thirdCard + " ";
+        sum += thirdCard;
+        sumEl.innerText = "Sum : " + " " + sum;
+        if (sum <= 20) {
+          message = "do you want to draw a new card ?"
+        }
+        else if (sum === 21) {
+          message = "you've got the blackjack!";
+          hasBlackjack = true;
+        }
+        else {
+          message = "you're out of the game !";
+          isAlive = false;
+        }
+  messageEl.textContent = message;
 }
-
-
+}
